@@ -13,10 +13,11 @@ module.exports = class extends Component {
 
         const language = page.lang || page.language || config.language;
         const columnCount = Widgets.getColumnCount(config.widgets, config, page);
-
+        // const columnCount = 3;
         return <html lang={language ? language.substr(0, 2) : ''}>
             <Head site={site} config={config} helper={helper} page={page} />
-            <body class={`is-${columnCount}-column`}>
+            {/* <body class={`is-${columnCount}-column`}> */}
+            <body class={`is-3-column`}>
                 <Navbar config={config} helper={helper} page={page} />
                 <section class="section">
                     <div class="container">
@@ -28,6 +29,7 @@ module.exports = class extends Component {
                                 'is-12': columnCount === 1,
                                 'is-8-tablet is-8-desktop is-8-widescreen': columnCount === 2,
                                 'is-8-tablet is-8-desktop is-6-widescreen': columnCount === 3
+
                             })} dangerouslySetInnerHTML={{ __html: body }}></div>
                             <Widgets site={site} config={config} helper={helper} page={page} position={'left'} />
                             <Widgets site={site} config={config} helper={helper} page={page} position={'right'} />

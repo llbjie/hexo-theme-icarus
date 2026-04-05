@@ -43,6 +43,7 @@
             {
                 "$ref": "/widget/followit.json"
             }
+
         ],
         "required": [
             "position"
